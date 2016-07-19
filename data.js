@@ -4,15 +4,15 @@ var sourceData = {
         {
             name: "Group 1",
             items: [
-                {name: "item_1_1", img: "img/img_item_1_1.png", link: "google.com"},
-                {name: "item_1_2", img: "img/img_item_1_2.png", link: "yahoo.com"}
+                {name: "item_1_1", img: "img/google-logo.jpg", link: "google.com"},
+                {name: "item_1_2", img: "img/yahoo-logo.jpg", link: "yahoo.com"}
             ]
         },
         {
             name: "Group 2",
             items: [
-                {name: "item_2_1", img: "img/img_item_2_1.png", link: "rambler.ru"},
-                {name: "item_2_2", img: "img/img_item_2_2.png", link: "ya.ru"}
+                {name: "item_2_1", img: "img/rambler-logo.jpg", link: "rambler.ru"},
+                {name: "item_2_2", img: "img/yandex-logo.jpg", link: "ya.ru"}
             ]
         }
     ]

@@ -1,3 +1,8 @@
+var groupArrow = {
+  up:    "img/ic_keyboard_arrow_up_black_24px.svg",
+  down:  "img/ic_keyboard_arrow_down_black_24px.svg",
+  right: "img/ic_keyboard_arrow_right_black_24px.svg"
+};
 
 function traceJson(inp) {
     $(document.body).append(
@@ -23,7 +28,9 @@ function renderGroup(groupData) {
 
     return $("<div>")
         .addClass("group")
-        .append($("<p>").addClass("groupName").html(groupData.name))
+        .append($("<p>").addClass("groupName")
+          .append($("<img>").addClass("groupArrow").attr("src", groupArrow.down))
+          .append(""+groupData.name))
         .append(groupContent);
 }
 
@@ -34,13 +41,24 @@ function renderItem(itemData) {
         .append(
             $("<div>")
                 .addClass("itemContent")
-                .append($("<p>").addClass("itemImg").html(itemData.img))
-                .append($("<p>").addClass("itemLink").html(itemData.link))
+                .append($("<img>").addClass("itemImg").attr("src", itemData.img))
+                .append($("<a>")
+                    .addClass("itemLink")
+                    .attr("href", "http://" + itemData.link)
+                    .html(itemData.link)
+                )
         );
 }
 
 function setEventHandlers() {
-    $(".group").on("click", function (event) {
-        $(this).find(".groupContent").fadeToggle();
+    $(".groupName").on("click", function (event) {
+        var group = $(this).closest(".group");
+        var groupContent = group.find(".groupContent");
+        groupContent.slideToggle("fast", function() {
+          var isGroupVisible = (groupContent.css("display") != "none");
+          group.find(".groupArrow").attr("src", isGroupVisible? groupArrow.down : groupArrow.right);
+        });
     });
 }
+
+

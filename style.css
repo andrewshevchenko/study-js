@@ -1,0 +1,37 @@
+pre {
+  border-style: solid;
+  border-width: 1px;
+  background-color: #f0f0f0;
+  font-family: Courier, monospace;
+  font-size: 11;
+}
+
+p.groupName {
+  border-style: solid;
+  border-width: 1px;
+  background-color: #505000;
+}
+
+div.itemContent {
+  border-style: solid;
+  border-width: 1px;
+  background-color: #33bbee;
+  width:  90px;
+  height: 100px;
+}
+
+div.item {
+  display: inline-flex;
+  margin: 10px;
+}
+
+.itemImg {
+  width:  50px;
+  height: 50px;
+  display: block;
+  margin:  auto;
+}
+
+.itemLink { 
+  text-align: center; /* why doesn't work? */
+}
